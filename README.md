@@ -160,4 +160,8 @@ $ ./scripts/online.sh
 
 <p align="center">
     <img src="./readme/online_segmentation.png" width="800" alt=""/>
+<<<<<<< HEAD
 </p>
+=======
+</p>
+>>>>>>> e39b7e1f2f1b05f529e7eec4751136caafed4e04
