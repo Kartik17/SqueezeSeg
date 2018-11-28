@@ -4,7 +4,7 @@ export GPUID=0
 export NET="squeezeSeg"
 export IMAGE_SET="train"
 export LOG_DIR="./log/"
-export STEPS=25000
+export STEPS=50000
 
 if [ $# -eq 0 ]
 then
@@ -63,7 +63,7 @@ logdir="$LOG_DIR/"
 python ./src/train.py \
   --dataset=KITTI \
   --pretrained_model_path=./data/SqueezeNet/squeezenet_v1.1.pkl \
-  --data_path=./data/ \
+  --data_path=./alidata/ \
   --image_set=$IMAGE_SET \
   --train_dir="$logdir/train" \
   --net=$NET \

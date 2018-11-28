@@ -58,7 +58,8 @@ def train():
             'Selected neural net architecture not supported: {}'.format(FLAGS.net)
 
         if FLAGS.net == 'squeezeSeg':
-            mc = kitti_squeezeSeg_config()
+            # mc = kitti_squeezeSeg_config()
+            mc = alib_squeezeSeg_config()
             mc.PRETRAINED_MODEL_PATH = FLAGS.pretrained_model_path
             model = SqueezeSeg(mc)
         # *.npy image dataset in random order
@@ -107,7 +108,7 @@ def train():
 
                     sess.run(model.enqueue_op, feed_dict=feed_dict)
 
-        saver = tf.train.Saver(tf.all_variables())
+        saver = tf.train.Saver(tf.all_variables(),max_to_keep=25)
         summary_op = tf.summary.merge_all()
         init = tf.initialize_all_variables()
 

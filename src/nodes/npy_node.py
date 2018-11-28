@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Training Dataset Visualization
+Training Dataset Visualization with feature map
 """
 
 import argparse

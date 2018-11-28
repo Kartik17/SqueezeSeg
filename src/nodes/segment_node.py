@@ -9,6 +9,7 @@ import sys
 import os.path
 import numpy as np
 from PIL import Image
+import pandas as pd
 
 # lib_path = os.path.abspath(os.path.join('..'))
 # print lib_path
@@ -188,6 +189,10 @@ class SegmentNode():
             }
         )
         label = pred_cls[0]
+        # df = pd.DataFrame(label)
+        # print df.size
+        # df.to_csv("/home/sang/categray.csv")
+        
 
         # # generated depth map from LiDAR data
         depth_map = Image.fromarray(
@@ -221,9 +226,11 @@ class SegmentNode():
         z = lidar[:, :, 2].reshape(-1)
         i = lidar[:, :, 3].reshape(-1)
         label = label.reshape(-1)
+        # print len(label)
         # cond = (label!=0)
         # print(cond)
         cloud = np.stack((x, y, z, i, label))
+        print len(cloud.T)
         # cloud = np.stack((x, y, z, i))
 
         label_map = Image.fromarray(

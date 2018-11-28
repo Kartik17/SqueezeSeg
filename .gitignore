@@ -6,6 +6,12 @@ log/
 # ignore training dataset
 data/lidar_2d/
 data/lidar_2d.tgz
+alidata/
+
+#ignore temp file
+loglog/
+nohup.out
+backup/
 
 # CLion
 .idea/

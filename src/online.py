@@ -23,6 +23,7 @@ tf.app.flags.DEFINE_string(
 tf.app.flags.DEFINE_string(
     'out_dir', './data/samples_out/', """Directory to dump output.""")
 tf.app.flags.DEFINE_string('gpu', '0', """gpu id.""")
+tf.app.flags.DEFINE_string('sub_topic', '/velodyne_points', """sub topic""")
 
 
 if __name__ == '__main__':
@@ -30,7 +31,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='LiDAR point cloud semantic segmentation')
     parser.add_argument('--sub_topic', type=str,
                         help='the pointcloud message topic to be subscribed, default `/kitti/points_raw`',
-                        default='/kitti/points_raw')
+                        default='/csv_clouds')
     parser.add_argument('--pub_topic', type=str,
                         help='the pointcloud message topic to be published, default `/squeeze_seg/points`',
                         default='/squeeze_seg/points')

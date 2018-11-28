@@ -1,1 +1,2 @@
 from kitti_squeezeSeg_config import kitti_squeezeSeg_config
+from alib_squeezeSeg_config import alib_squeezeSeg_config
